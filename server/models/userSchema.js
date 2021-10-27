@@ -9,4 +9,23 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  phone: {
+    type: Number,
+    required: true,
+  },
+  work: {
+    type: Number,
+    required: true,
+  },
+  password: {
+    type: Number,
+    required: true,
+  },
+  confirm_password: {
+    type: Number,
+    required: true,
+  },
 });
+
+const User = mongoose.model('USER', userSchema);
+module.exports = User;
