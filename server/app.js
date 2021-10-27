@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 dotenv.config({ path: './config.env' });
 require('./db/connection');
 
+const User = require('./models/userSchema');
+
 const PORT = process.env.PORT;
 
 const middleware = (req, res, next) => {
