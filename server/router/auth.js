@@ -70,4 +70,25 @@ router.post('/register', async (req, res) => {
   }
 });
 
+//Sign in 
+router.post('/signin', async(req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: "Please enter email and password" });
+    }
+    const userLogin = await User.findOne({ email: email });
+    console.log(userLogin);
+
+    if (!userLogin) {
+      return res.status(400).json({ eroor: "User not found" });
+    }
+    else {
+      return res.status(200).json({ message: "User sign in succesfully" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+})
+
 module.exports = router;
