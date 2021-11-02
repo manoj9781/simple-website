@@ -1,6 +1,7 @@
 const express = require('express');
-
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+
 const DB = require('../db/connection');
 const User = require('../models/userSchema');
 router.get('/', (req, res) => {
@@ -83,12 +84,17 @@ router.post('/signin', async (req, res) => {
       return res.status(400).json({ error: 'Please enter email and password' });
     }
     const userLogin = await User.findOne({ email: email });
-    console.log(userLogin);
+    // console.log(userLogin);
 
-    if (!userLogin) {
-      return res.status(400).json({ eroor: 'User not found' });
+    if (userLogin) {
+      const userFound = await bcrypt.compare(password, userLogin.password);
+      if (!userFound) {
+        return res.status(400).json({ error: 'User not found' });
+      } else {
+        return res.status(200).json({ message: 'User sign in succesfully' });
+      }
     } else {
-      return res.status(200).json({ message: 'User sign in succesfully' });
+      return res.status(400).json({ error: 'Invalid credientials' });
     }
   } catch (error) {
     console.log(error);

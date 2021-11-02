@@ -28,17 +28,16 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-//Hashing the Password 
+//Hashing the Password
 
 userSchema.pre('save', async function (next) {
-  console.log("Hello I am from schema");
+  console.log('Hello I am from schema');
   if (this.isModified('password')) {
     this.password = await bcrypt.hash(this.password, 12);
     this.confirm_password = await bcrypt.hash(this.confirm_password, 12);
   }
-})
+  next();
+});
 
 const User = mongoose.model('USER', userSchema);
 module.exports = User;
-
-
