@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const DB = require('../db/connection');
 const User = require('../models/userSchema');
@@ -88,6 +89,8 @@ router.post('/signin', async (req, res) => {
 
     if (userLogin) {
       const userFound = await bcrypt.compare(password, userLogin.password);
+      const token = await userLogin.generateAuthToken();
+      console.log(token);
       if (!userFound) {
         return res.status(400).json({ error: 'User not found' });
       } else {
