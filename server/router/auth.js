@@ -91,6 +91,12 @@ router.post('/signin', async (req, res) => {
       const userFound = await bcrypt.compare(password, userLogin.password);
       const token = await userLogin.generateAuthToken();
       console.log(token);
+
+      res.cookie('jwtToken', token, {
+        expires: new Date(Date.now() + 25892000000),
+        httpOnly: true,
+      });
+
       if (!userFound) {
         return res.status(400).json({ error: 'User not found' });
       } else {
