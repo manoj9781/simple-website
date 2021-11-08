@@ -1,25 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
 
-.signup {
-  display: flex;
+.signup{
+   margin-top: 24px;
+   display: flex;
 }
-.container {
-  /* background-color: gray; */
-  width: 60%;
-  margin-top: 8px;
+.container{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 3px 3px red, -1em 0 0.4em olive;
+    padding-bottom: 32px;
 }
-.signup-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-title {
-  text-align: center;
-  margin-top: 16px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 32px;
-
-}
-.signup-image{
+.signup-content{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-title{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #630000;
+    padding-top: 16px;
+}
+.form-group{
+    padding-top: 12px;
+    margin-left: 8px;
+}
+.form-group input{
+    border: none;
+    border-bottom: 1px solid black;
+    margin-left: 16px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.form-group input:focus{
+    outline: none;
+}
+
+.form-submit{
+    background-color: #112031;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 16px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 24px;
+}
+.form-submit:hover{
+    background-color: #3F0713;
+
 }

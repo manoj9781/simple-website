@@ -80,7 +80,7 @@ function Signup() {
                     type="password"
                     name="confirm_password"
                     id="confirm_password"
-                    placeholder="Enter your COnfirm Password"
+                    placeholder="Enter your Confirm Password"
                     autoComplete="off"
                   />
                 </div>
