@@ -7,8 +7,9 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <NavLink className=" logo navbar-brand" to="/">
-            Navbar
+          <NavLink className="logo navbar-brand" to="/">
+            <img src="" alt="" srcset="" />
+            Shadow
           </NavLink>
           <button
             className="navbar-toggler"
