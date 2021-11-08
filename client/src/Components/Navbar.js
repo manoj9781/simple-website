@@ -7,7 +7,7 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <NavLink className="navbar-brand logo" to="/">
+          <NavLink className=" logo navbar-brand" to="/">
             Navbar
           </NavLink>
           <button
@@ -28,7 +28,7 @@ function Navbar() {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className=" Demo nav-item">
                 <NavLink className="nav-link" to="/about">
                   About
                 </NavLink>
