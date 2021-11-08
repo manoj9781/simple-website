@@ -24,6 +24,66 @@ function Signup() {
                     autoComplete="off"
                   />
                 </div>
+                <div className="form-group">
+                  <label htmlFor="email">
+                    <i class="zmdi zmdi-email materials-icon-name"></i>
+                  </label>
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Enter your Email"
+                    autoComplete="off"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="phone">
+                    <i class="zmdi zmdi-phone materials-icon-name"></i>
+                  </label>
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    placeholder="Enter your Phone"
+                    autoComplete="off"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="work">
+                    <i class="zmdi zmdi-slideshow materials-icon-name"></i>
+                  </label>
+                  <input
+                    type="text"
+                    name="work"
+                    id="work"
+                    placeholder="Enter your Passion"
+                    autoComplete="off"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">
+                    <i class="zmdi zmdi-lock materials-icon-name"></i>
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Enter your Password"
+                    autoComplete="off"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="confirm_password">
+                    <i class="zmdi zmdi-lock materials-icon-name"></i>
+                  </label>
+                  <input
+                    type="password"
+                    name="confirm_password"
+                    id="confirm_password"
+                    placeholder="Enter your COnfirm Password"
+                    autoComplete="off"
+                  />
+                </div>
                 <div className="form-group form-button">
                   <input
                     type="submit"
