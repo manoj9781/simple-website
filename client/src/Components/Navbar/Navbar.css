@@ -24,6 +24,9 @@
     text-transform: none;
     font-weight: bold;
 }
-.home-links:hover {
-    color: white;
+.home-links:hover, 
+.home-links:focus {
+    color: #191A19;
+    border-bottom: 1px solid black;
+    transition: all 0.5s ease-out;
 }
