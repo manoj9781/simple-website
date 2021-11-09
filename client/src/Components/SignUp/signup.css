@@ -55,3 +55,18 @@
     background-color: #3F0713;
 
 }
+
+.signup-image-link{
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 4px;
+    color: black;
+    text-transform: capitalize;
+    word-spacing: 2px;
+}
+.signup-image-link:hover{
+    color: brown;
+}

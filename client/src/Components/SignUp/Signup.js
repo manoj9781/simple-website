@@ -100,7 +100,7 @@ function Signup() {
                 <img src={signUp} alt="Pic" />
               </figure>
               <NavLink to="/login" className="signup-image-link">
-                I am already register
+               <span className="image-link"> I am already register</span>
               </NavLink>
             </div>
           </div>
