@@ -1,6 +1,6 @@
 import React from 'react';
 import './signup.css';
-import signUp from '../images/signup.jpg';
+import signUp from '../../images/signup.jpg';
 import { NavLink } from 'react-router-dom';
 
 function Signup() {
