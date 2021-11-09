@@ -13,11 +13,11 @@ function Login() {
               <figure>
                 <img src={signIn} alt="Pic" />
               </figure>
-              <NavLink to="/signup" className="signup-image-link">
+              <NavLink to="/signup" className="signin-image-link">
                 <span className="image-link"> Create an Account</span>
               </NavLink>
             </div>
-            <div className="signup-form">
+            <div className="signin-form">
               <h2 className="form-title">Sign In</h2>
               <form className="register-form" id="register-form">
                 <div className="form-group">
@@ -51,8 +51,8 @@ function Login() {
                   <input
                     type="submit"
                     value="Sign In"
-                    name="signup"
-                    id="signup"
+                    name="signin"
+                    id="signin"
                     className="form-submit"
                   />
                 </div>

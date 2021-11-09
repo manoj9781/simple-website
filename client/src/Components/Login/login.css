@@ -14,7 +14,7 @@
 }
 .signin-content{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding-top: 32px;
 }
@@ -54,10 +54,11 @@
 }
 .form-submit:hover{
     background-color: #3F0713;
+    color: white;
 
 }
 
-.signup-image-link{
+.signin-image-link{
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     display: flex;
@@ -68,6 +69,6 @@
     text-transform: capitalize;
     word-spacing: 2px;
 }
-.signup-image-link:hover{
+.signin-image-link:hover{
     color: brown;
 }
