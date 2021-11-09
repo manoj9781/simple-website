@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
-// import logo from '..../images/images.jpg';
+import logoImage from '../../images/images1.jpg';
 import './Navbar.css';
 
 function Navbar() {
@@ -10,7 +10,8 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
-            Shadow
+            <img className="logo-image" src={logoImage} alt="pic" />
+           <span className="heading"> Shadow</span>
           </NavLink>
           <button
             className="navbar-toggler"
@@ -27,27 +28,27 @@ function Navbar() {
             <ul className="navbar-nav ms-auto ">
               <li className="nav-item">
                 <NavLink className="nav-link " aria-current="page" to="/">
-                  Home
+                 <span className="home-links"> Home</span>
                 </NavLink>
               </li>
               <li className=" Demo nav-item">
                 <NavLink className="nav-link" to="/about">
-                  About
+                <span className="home-links"> About</span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
-                  Contact
+                <span className="home-links"> Contact</span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
-                  Login
+                <span className="home-links"> Login</span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/signup">
-                  Register
+                <span className="home-links"> Register</span>
                 </NavLink>
               </li>
             </ul>

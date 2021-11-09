@@ -1,0 +1,29 @@
+.logo-image{
+    height: 40px;
+    width: 40px;
+    margin-left: 16px;
+    border-radius: 60%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8px;
+
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #261C2C;
+}
+.home-links{
+    color: brown;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: bold;
+}
+.home-links:hover {
+    color: white;
+}
