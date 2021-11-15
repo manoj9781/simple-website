@@ -2,10 +2,15 @@ import React from 'react'
 
 function Home() {
     return (
-        <div>
-            <h1>Hello Home</h1>
-            <p className="demo">We are the Mern Developer</p>
-        </div>
+        <>
+            
+            <div className="home-page">
+                <div className="home-div">
+                    <p> Welcome </p>
+                    <h2>We Are the Mern Developer </h2>
+                </div>
+            </div>
+        </>
     )
 }
 
