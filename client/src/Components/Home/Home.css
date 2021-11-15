@@ -1,0 +1,26 @@
+.home-page{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+       
+background: linear-gradient(152deg , #FEFBF3 60%,#FEFBF3 33%,#D4ECDD 45%,#2C3E52 156%);
+}
+
+.home-div p{
+    font-size: 24px;
+    color: brown;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    margin: 8px;
+}
+
+
+.home-div h2{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin: 8px;
+}
