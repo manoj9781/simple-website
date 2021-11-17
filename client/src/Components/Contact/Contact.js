@@ -20,15 +20,17 @@ function Contact() {
               </div>
               <div className="contact_info_item d-flex justify-content-start align-items-center">
                 <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdhPTSZF3KF09ZFstxHOpeWKzJgw2wlgq6yw&usqp=CAU" alt="Email pic"  />
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdhPTSZF3KF09ZFstxHOpeWKzJgw2wlgq6yw&usqp=CAU"
+                  alt="Email pic"
+                />
                 <div className="contact_info_content">
                   <div className="contact_info_title">Email</div>
                   <div className="contact_info_text">manoj@gmail.com</div>
                 </div>
               </div>
               <div className="contact_info_item d-flex justify-content-start align-items-center">
-                              <img
-                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJ0vh9_E8szMjh5Slv7KRHtGTmRcbVAazJw&usqp=CAU"
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJ0vh9_E8szMjh5Slv7KRHtGTmRcbVAazJw&usqp=CAU"
                   alt="Address Pic"
                 />
                 <div className="contact_info_content">
@@ -75,7 +77,7 @@ function Contact() {
                       name=""
                       id=""
                       cols="30"
-                      rows="10"
+                      rows="3"
                       className="text_field contact_form_message"
                       placeholder="Message"
                     ></textarea>
