@@ -57,19 +57,19 @@ function About() {
             <div className="col-md-4">
               <div className="profile-work">
                 <p>WorK Link</p>
-                <a href="">Youtube</a><br />
-                <a href="">Facebook</a><br />
-                <a href="">Github</a><br />
-                <a href="">Linkden</a><br />
-                <a href="">Instagram</a><br />
+                <a href="#">Youtube</a><br />
+                <a href="#">Facebook</a><br />
+                <a href="#">Github</a><br />
+                <a href="#">Linkden</a><br />
+                <a href="#">Instagram</a><br />
               </div>
             </div>
             <div className="col-md-8 pl-5 about-info">
               <div className="tab-content profile-tab" id="myContentTab">
-                <div className="tab-pane fade show active" id="home" role="tab-panel" aria-labelledby="home-tab">
+                <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="">USER ID</label>
+                      <label>USER ID</label>
                     </div>
                     <div className="col-md-6">
                       <p>87087060878</p>
@@ -77,7 +77,7 @@ function About() {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="">Name</label>
+                      <label>Name</label>
                     </div>
                     <div className="col-md-6">
                       <p>Manoj Singh Rana</p>
@@ -85,7 +85,7 @@ function About() {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="">Profession</label>
+                      <label>Profession</label>
                     </div>
                     <div className="col-md-6">
                       <p>Developer</p>
@@ -93,10 +93,20 @@ function About() {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label htmlFor="">University</label>
+                      <label>University</label>
                     </div>
                     <div className="col-md-6">
                       <p>LPU</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <label>Experience</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>Beginer</p>
                     </div>
                   </div>
                 </div>
