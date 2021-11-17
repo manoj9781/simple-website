@@ -63,3 +63,21 @@
     outline: none;
 }
 
+.contact_submit_button{
+    padding:8px;
+    margin-top: 16px;
+    background-color: transparent;
+    border: none;
+    border:2px solid #6B4F4F;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #212121;
+    color: white;
+}
+
+.contact_submit_button:hover{
+    color: white;
+    background-color: #FFDAC7;
+}
+
