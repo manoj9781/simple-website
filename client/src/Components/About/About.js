@@ -121,23 +121,23 @@ function About() {
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label>Experience</label>
+                      <label>Total Projects</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Beginer</p>
-                    </div>
-                  </div>
-                  <div className="row mt-3">
-                    <div className="col-md-6">
-                      <label>Experience</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>Beginer</p>
+                      <p>07</p>
                     </div>
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label>Experience</label>
+                      <label>Language Knowledge</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>Intermediate</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>React Js</label>
                     </div>
                     <div className="col-md-6">
                       <p>Beginer</p>
