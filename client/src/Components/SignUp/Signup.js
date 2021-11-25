@@ -1,9 +1,28 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './signup.css';
 import signUp from '../../images/signup.jpg';
 import { NavLink } from 'react-router-dom';
 
 function Signup() {
+
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    work: '',
+    password: '',
+    confirm_password: '',
+  });
+
+  let name, value;
+  const handleInputs = (e) => {
+    console.log(e);
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser({ ...user, [name]: value });
+  }
+
   return (
     <>
       <section className="signup">
@@ -14,7 +33,7 @@ function Signup() {
               <form className="register-form" id="register-form">
                 <div className="form-group">
                   <label htmlFor="name">
-                    <i class="zmdi zmdi-account materials-icon-name"></i>
+                    <i className="zmdi zmdi-account materials-icon-name"></i>
                   </label>
                   <input
                     type="text"
@@ -22,11 +41,13 @@ function Signup() {
                     id="name"
                     placeholder="Enter your name"
                     autoComplete="off"
+                    value={user.name}
+                    onChange={handleInputs}
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">
-                    <i class="zmdi zmdi-email materials-icon-name"></i>
+                    <i className="zmdi zmdi-email materials-icon-name"></i>
                   </label>
                   <input
                     type="text"
@@ -34,11 +55,13 @@ function Signup() {
                     id="email"
                     placeholder="Enter your Email"
                     autoComplete="off"
+                    value={user.email}
+                    onChange={handleInputs}
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="phone">
-                    <i class="zmdi zmdi-phone materials-icon-name"></i>
+                    <i className="zmdi zmdi-phone materials-icon-name"></i>
                   </label>
                   <input
                     type="text"
@@ -46,11 +69,13 @@ function Signup() {
                     id="phone"
                     placeholder="Enter your Phone"
                     autoComplete="off"
+                    value={user.phone}
+                    onChange={handleInputs}
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="work">
-                    <i class="zmdi zmdi-slideshow materials-icon-name"></i>
+                    <i className="zmdi zmdi-slideshow materials-icon-name"></i>
                   </label>
                   <input
                     type="text"
@@ -58,11 +83,13 @@ function Signup() {
                     id="work"
                     placeholder="Enter your Passion"
                     autoComplete="off"
+                    value={user.work}
+                    onChange={handleInputs}
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">
-                    <i class="zmdi zmdi-lock materials-icon-name"></i>
+                    <i className="zmdi zmdi-lock materials-icon-name"></i>
                   </label>
                   <input
                     type="password"
@@ -70,11 +97,13 @@ function Signup() {
                     id="password"
                     placeholder="Enter your Password"
                     autoComplete="off"
+                    value={user.password}
+                    onChange={handleInputs}
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="confirm_password">
-                    <i class="zmdi zmdi-lock materials-icon-name"></i>
+                    <i className="zmdi zmdi-lock materials-icon-name"></i>
                   </label>
                   <input
                     type="password"
@@ -82,6 +111,8 @@ function Signup() {
                     id="confirm_password"
                     placeholder="Enter your Confirm Password"
                     autoComplete="off"
+                    value={user.confirm_password}
+                    onChange={handleInputs}
                   />
                 </div>
                 <div className="form-group form-button">

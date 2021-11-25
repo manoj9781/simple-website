@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <switch>
+      
       <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -23,7 +23,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Error/>} />
       </Routes>
-     </switch>
+    
     </div>
   );
 }
