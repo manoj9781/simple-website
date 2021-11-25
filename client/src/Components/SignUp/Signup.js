@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './signup.css';
 import signUp from '../../images/signup.jpg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Signup() {
 
+  const history = useNavigate();
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -21,7 +22,40 @@ function Signup() {
     value = e.target.value;
 
     setUser({ ...user, [name]: value });
-  }
+  };
+
+  const postData = async (event) => {
+    event.preventDefault();
+
+    const { name, email, phone, work, password, confirm_password } = user;
+    const res = await fetch('/register', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        work,
+        password,
+        confirm_password,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.status === 422 || !data) {
+      window.alert("Failed");
+      console.log("Failed");
+    }
+    else {
+      window.alert('Succesful');
+      console.log("succesful");
+
+      history(-1);
+    }
+  };
 
   return (
     <>
@@ -30,7 +64,7 @@ function Signup() {
           <div className="signup-content">
             <div className="signup-form">
               <h2 className="form-title">Sign Up</h2>
-              <form className="register-form" id="register-form">
+              <form method="post" className="register-form" id="register-form">
                 <div className="form-group">
                   <label htmlFor="name">
                     <i className="zmdi zmdi-account materials-icon-name"></i>
@@ -122,6 +156,7 @@ function Signup() {
                     name="signup"
                     id="signup"
                     className="form-submit"
+                    onClick={postData}
                   />
                 </div>
               </form>
@@ -131,7 +166,7 @@ function Signup() {
                 <img src={signUp} alt="Pic" />
               </figure>
               <NavLink to="/login" className="signup-image-link">
-               <span className="image-link"> I am already register</span>
+                <span className="image-link"> I am already register</span>
               </NavLink>
             </div>
           </div>
