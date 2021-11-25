@@ -12,7 +12,7 @@ function Error() {
           </div>
           <h2>We are sorry, Page not found</h2>
           <p className="mb-5">
-            The page you are looking might be removed or its name chamged
+            The page you are looking might be removed or its name changed
             permanently
           </p>
           <NavLink to="/"> Back to Home Page </NavLink>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
@@ -13,6 +14,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <switch>
       <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -21,6 +23,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Error/>} />
       </Routes>
+     </switch>
     </div>
   );
 }
