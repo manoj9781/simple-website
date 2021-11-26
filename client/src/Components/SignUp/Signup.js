@@ -4,7 +4,6 @@ import signUp from '../../images/signup.jpg';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 function Signup() {
-
   const history = useNavigate();
   const [user, setUser] = useState({
     name: '',
@@ -46,12 +45,11 @@ function Signup() {
     const data = await res.json();
 
     if (data.status === 422 || !data) {
-      window.alert("Failed");
-      console.log("Failed");
-    }
-    else {
+      window.alert('Failed');
+      console.log('Failed');
+    } else {
       window.alert('Succesful');
-      console.log("succesful");
+      console.log('succesful');
 
       history(-1);
     }
