@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
 import signIn from '../../images/login.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigation = useNavigate();
+
+  const userLogin = async (event) => {
+    event.preventDefault();
+
+    const res = await fetch('/signin', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const data = res.json();
+
+    if (res.status === 400 || !data) {
+      window.alert("Invalid");
+    }
+    else {
+      window.alert("seccesful");
+      navigation(-1);
+    }
+  };
+
   return (
     <>
       <section className="signin">
@@ -19,10 +48,10 @@ function Login() {
             </div>
             <div className="signin-form">
               <h2 className="form-title">Sign In</h2>
-              <form className="register-form" id="register-form">
+              <form method="post" className="register-form" id="register-form">
                 <div className="form-group">
                   <label htmlFor="email">
-                    <i class="zmdi zmdi-email materials-icon-name"></i>
+                    <i className="zmdi zmdi-email materials-icon-name"></i>
                   </label>
                   <input
                     type="text"
@@ -30,13 +59,14 @@ function Login() {
                     id="email"
                     placeholder="Enter your Email"
                     autoComplete="off"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                
-               
+
                 <div className="form-group">
                   <label htmlFor="password">
-                    <i class="zmdi zmdi-lock materials-icon-name"></i>
+                    <i className="zmdi zmdi-lock materials-icon-name"></i>
                   </label>
                   <input
                     type="password"
@@ -44,9 +74,11 @@ function Login() {
                     id="password"
                     placeholder="Enter your Password"
                     autoComplete="off"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-               
+
                 <div className="form-group form-button">
                   <input
                     type="submit"
@@ -54,6 +86,7 @@ function Login() {
                     name="signin"
                     id="signin"
                     className="form-submit"
+                    onClick={userLogin}
                   />
                 </div>
               </form>

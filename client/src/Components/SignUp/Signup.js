@@ -44,7 +44,7 @@ function Signup() {
 
     const data = await res.json();
 
-    if (data.status === 422 || !data) {
+    if (res.status === 422 || !data) {
       window.alert('Failed');
       console.log('Failed');
     } else {
