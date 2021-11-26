@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const authenticate = require('../middleware/authenticate');
+
 const DB = require('../db/connection');
 const User = require('../models/userSchema');
 router.get('/', (req, res) => {
@@ -109,5 +111,10 @@ router.post('/signin', async (req, res) => {
     console.log(error);
   }
 });
+
+router.get('/about', authenticate, (req, res) => {
+  console.log('HEllo about page');
+  res.send('Hello about from Manoj singh Rana');
+})
 
 module.exports = router;
