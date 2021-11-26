@@ -114,7 +114,7 @@ router.post('/signin', async (req, res) => {
 
 router.get('/about', authenticate, (req, res) => {
   console.log('HEllo about page');
-  res.send('Hello about from Manoj singh Rana');
+  res.send(req.rootUser);
 })
 
 module.exports = router;
