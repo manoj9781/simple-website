@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import userImage from '../../images/upload.jpg';
 import './About.css';
 
+import { useNavigate } from 'react-router-dom';
+
 function About() {
+  const navigate = useNavigate();
+  const aboutPage = async () => {
+    try {
+      const res = await fetch('/about', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      if (!res.status === 200) {
+        const error = new Error(res.Error);
+        throw error;
+      }
+    } catch (error) {
+      console.log(error);
+      navigate('/login');
+    }
+  };
+
+  useEffect(() => {
+    aboutPage();
+  }, []);
+
   return (
     <>
       <div className="container emp-profile">
-        <form method="">
+        <form method="GET">
           <div className="row">
             <div className="col-md-4">
               <img className="user-image" src={userImage} alt="UserImage" />
@@ -22,7 +53,7 @@ function About() {
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#home">
-                     About
+                      About
                     </a>
                   </li>
                   <li class="nav-item">

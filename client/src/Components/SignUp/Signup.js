@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './signup.css';
 import signUp from '../../images/signup.jpg';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate} from 'react-router-dom';
 
 function Signup() {
   const history = useNavigate();
@@ -51,7 +51,7 @@ function Signup() {
       window.alert('Succesful');
       console.log('succesful');
 
-      history(-1);
+      history('/login');
     }
   };
 
