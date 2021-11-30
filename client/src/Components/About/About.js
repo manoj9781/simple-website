@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import userImage from '../../images/upload.jpg';
 import './About.css';
 
@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 function About() {
   const navigate = useNavigate();
+  const [userData, setUserData] = useState("");
   const aboutPage = async () => {
     try {
       const res = await fetch('/about', {
@@ -19,6 +20,7 @@ function About() {
 
       const data = await res.json();
       console.log(data);
+      setUserData(data);
 
       if (!res.status === 200) {
         const error = new Error(res.Error);
@@ -44,20 +46,20 @@ function About() {
             </div>
             <div className="col-md-6">
               <div className="profile-head">
-                <h5>Manoj Singh Rana</h5>
+                <h5>{ userData.name}</h5>
                 <h6>Web Developer</h6>
                 <p className="profile-rating mt-3 mb-5">
                   RANKINGS: <span>1/10</span>
                 </p>
 
-                <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#home">
+                <ul className="nav nav-tabs" role="tablist">
+                  <li className="nav-item">
+                    <a className="nav-link active" data-toggle="tab" href="#home">
                       About
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#profile">
+                  <li className="nav-item">
+                    <a className="nav-link" data-toggle="tab" href="#profile">
                       Timeline
                     </a>
                   </li>
@@ -116,7 +118,7 @@ function About() {
                       <label>Name</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Manoj Singh Rana</p>
+                      <p> {userData.name} </p>
                     </div>
                   </div>
                   <div className="row mt-3">
@@ -124,15 +126,23 @@ function About() {
                       <label>Specialization</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Web Development</p>
+                      <p>{userData.work}</p>
                     </div>
                   </div>
                   <div className="row mt-3">
                     <div className="col-md-6">
-                      <label>University</label>
+                      <label>Email</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Lovely Professional University</p>
+                      <p>{userData.email}</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Phone</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>{userData.phone}</p>
                     </div>
                   </div>
                 </div>
