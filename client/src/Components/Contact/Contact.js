@@ -1,7 +1,39 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './contact.css';
 
 function Contact() {
+
+  const [userData, setUserData] = useState({
+  });
+  const aboutPage = async () => {
+    try {
+      const res = await fetch('/getdata', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await res.json();
+      console.log(data);
+      setUserData(data);
+
+      if (!res.status === 200) {
+        const error = new Error(res.Error);
+        throw error;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    aboutPage();
+  }, []);
+
+
+
+
   return (
     <>
       <div className="contact_info">
@@ -15,7 +47,7 @@ function Contact() {
                 />
                 <div className="contact_info_content">
                   <div className="contact_info_title">Phone</div>
-                  <div className="contact_info_text">+91 978- 1742575</div>
+                  <div className="contact_info_text">+91 978-1742575</div>
                 </div>
               </div>
               <div className="contact_info_item d-flex justify-content-start align-items-center">
@@ -56,6 +88,7 @@ function Contact() {
                       className="contact_form_name input_field"
                       placeholder="Your Name"
                       required="true"
+                      value={userData.name}
                     />
                     <input
                       type="email"
@@ -63,6 +96,7 @@ function Contact() {
                       className="contact_form_email input_field"
                       placeholder="Your Email"
                       required="true"
+                      value={userData.email}
                     />
                     <input
                       type="number"
@@ -70,6 +104,7 @@ function Contact() {
                       className="contact_form_phone input_field"
                       placeholder="Your Phone Number"
                       required="true"
+                      value={userData.phone}
                     />
                   </div>
                   <div className="contact_form_content mt-4">
