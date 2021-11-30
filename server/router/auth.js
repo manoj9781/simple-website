@@ -80,6 +80,7 @@ router.post('/register', async (req, res) => {
 });
 
 //Sign in
+
 router.post('/signin', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -87,23 +88,22 @@ router.post('/signin', async (req, res) => {
       return res.status(400).json({ error: 'Please enter email and password' });
     }
     const userLogin = await User.findOne({ email: email });
-    // console.log(userLogin);
 
     if (userLogin) {
       const userFound = await bcrypt.compare(password, userLogin.password);
       const token = await userLogin.generateAuthToken();
       console.log(token);
 
-      res.cookie('jwtToken', token, {
+       res.cookie('jwtToken', token, {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true,
       });
-
       if (!userFound) {
         return res.status(400).json({ error: 'User not found' });
       } else {
         return res.status(200).json({ message: 'User sign in succesfully' });
       }
+     
     } else {
       return res.status(400).json({ error: 'Invalid credientials' });
     }
@@ -113,8 +113,7 @@ router.post('/signin', async (req, res) => {
 });
 
 router.get('/about', authenticate, (req, res) => {
-  console.log('HEllo about page');
   res.send(req.rootUser);
-})
+});
 
 module.exports = router;

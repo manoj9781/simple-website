@@ -1,17 +1,18 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
+app.use(cookieParser());
+
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const cors = require('cors');
 dotenv.config({ path: './config.env' });
 require('./db/connection');
+
 
 app.use(express.json());
 
 app.use(require('./router/auth'));
-
 const User = require('./models/userSchema');
-app.use(cors());
 const PORT = process.env.PORT;
 
 app.listen(PORT, (err) => {
