@@ -51,6 +51,29 @@ function Contact() {
     })
   }
 
+
+  const submitData = async (event) => {
+    event.preventDefault();
+
+    const res = await fetch('/contact', {
+      method: "post",
+      headers: {
+        "Content-Type":"application/json",
+      },
+      body: JSON.stringify(),
+    })
+
+    const data = await res.json();
+
+    if (!data) {
+      console.log("Message Not sent");
+    }
+    else {
+      alert("Message has been sent");
+      setUserData({ ...userData, message: "" });
+    }
+  }
+
   return (
     <>
       <div className="contact_info">
@@ -147,6 +170,7 @@ function Contact() {
                     <button
                       type="submit"
                       className=" button contact_submit_button"
+                      onClick={submitData}
                     >
                       Send Message
                     </button>
