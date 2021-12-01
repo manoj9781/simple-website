@@ -4,6 +4,10 @@ import './contact.css';
 function Contact() {
 
   const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message:""
   });
   const aboutPage = async () => {
     try {
@@ -16,7 +20,12 @@ function Contact() {
 
       const data = await res.json();
       console.log(data);
-      setUserData(data);
+      setUserData({
+        ...userData,
+        name: data.name,
+        email: data.email,
+        phone:data.phone,
+      });
 
       if (!res.status === 200) {
         const error = new Error(res.Error);
@@ -32,7 +41,15 @@ function Contact() {
   }, []);
 
 
+  const handleInputs = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
 
+    setUserData({
+      ...userData,
+      [name]: value
+    })
+  }
 
   return (
     <>
@@ -67,7 +84,7 @@ function Contact() {
                 />
                 <div className="contact_info_content">
                   <div className="contact_info_title">Address</div>
-                  <div className="contact_info_text">Pahgwara, Punjab</div>
+                  <div className="contact_info_text">Phagwara, Punjab</div>
                 </div>
               </div>
             </div>
@@ -87,7 +104,9 @@ function Contact() {
                       id="contact_form_name"
                       className="contact_form_name input_field"
                       placeholder="Your Name"
+                      name="name"
                       required="true"
+                      onChange={handleInputs}
                       value={userData.name}
                     />
                     <input
@@ -95,7 +114,9 @@ function Contact() {
                       id="contact_form_email"
                       className="contact_form_email input_field"
                       placeholder="Your Email"
+                      name="email"
                       required="true"
+                      onChange={handleInputs}
                       value={userData.email}
                     />
                     <input
@@ -103,7 +124,9 @@ function Contact() {
                       id="contact_form_phone"
                       className="contact_form_phone input_field"
                       placeholder="Your Phone Number"
+                      name="phone"
                       required="true"
+                      onChange={handleInputs}
                       value={userData.phone}
                     />
                   </div>
@@ -115,6 +138,9 @@ function Contact() {
                       rows="3"
                       className="text_field contact_form_message"
                       placeholder="Message"
+                      name="message"
+                      onChange={handleInputs}
+                      value={userData.message}
                     ></textarea>
                   </div>
                   <div className="contact_form_button">
