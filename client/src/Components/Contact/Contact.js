@@ -1,13 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './contact.css';
 
 function Contact() {
-
   const [userData, setUserData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message:""
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
   });
   const aboutPage = async () => {
     try {
@@ -24,7 +23,7 @@ function Contact() {
         ...userData,
         name: data.name,
         email: data.email,
-        phone:data.phone,
+        phone: data.phone,
       });
 
       if (!res.status === 200) {
@@ -40,39 +39,40 @@ function Contact() {
     aboutPage();
   }, []);
 
-
   const handleInputs = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
     setUserData({
       ...userData,
-      [name]: value
-    })
-  }
-
+      [name]: value,
+    });
+  };
 
   const submitData = async (event) => {
     event.preventDefault();
 
+    const { name, email, phone, message } = userData;
+
     const res = await fetch('/contact', {
-      method: "post",
+      method: 'post',
       headers: {
-        "Content-Type":"application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(),
-    })
+      body: JSON.stringify({
+        name, phone, email, message
+      }),
+    });
 
     const data = await res.json();
 
     if (!data) {
-      console.log("Message Not sent");
+      console.log('Message Not sent');
+    } else {
+      alert('Message has been sent');
+      setUserData({ ...userData, message: '' });
     }
-    else {
-      alert("Message has been sent");
-      setUserData({ ...userData, message: "" });
-    }
-  }
+  };
 
   return (
     <>
@@ -120,7 +120,7 @@ function Contact() {
             <div className="col-lg-10 offset-lg-1">
               <div className="contact_form_container py-5">
                 <div className="contact_form_title">Get In Touch</div>
-                <form id="contact_form">
+                <form method="post" id="contact_form">
                   <div className="contact_form_name d-flex justify-content-between align-items-between">
                     <input
                       type="text"
@@ -129,8 +129,8 @@ function Contact() {
                       placeholder="Your Name"
                       name="name"
                       required="true"
-                      onChange={handleInputs}
                       value={userData.name}
+                      onChange={handleInputs}
                     />
                     <input
                       type="email"
@@ -139,8 +139,8 @@ function Contact() {
                       placeholder="Your Email"
                       name="email"
                       required="true"
-                      onChange={handleInputs}
                       value={userData.email}
+                      onChange={handleInputs}
                     />
                     <input
                       type="number"
@@ -148,9 +148,9 @@ function Contact() {
                       className="contact_form_phone input_field"
                       placeholder="Your Phone Number"
                       name="phone"
+                      value={userData.phone}
                       required="true"
                       onChange={handleInputs}
-                      value={userData.phone}
                     />
                   </div>
                   <div className="contact_form_content mt-4">
@@ -162,8 +162,8 @@ function Contact() {
                       className="text_field contact_form_message"
                       placeholder="Message"
                       name="message"
-                      onChange={handleInputs}
                       value={userData.message}
+                      onChange={handleInputs}
                     ></textarea>
                   </div>
                   <div className="contact_form_button">
