@@ -9,6 +9,7 @@ import Contact from './Components/Contact/Contact';
 import Login from './Components/Login/Login';
 import Signup from './Components/SignUp/Signup';
 import Error from './Components/Error/Error';
+import Logout from './Components/Logout/Logout';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="*" element={<Error/>} />
       </Routes>
     

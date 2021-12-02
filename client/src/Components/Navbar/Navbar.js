@@ -51,6 +51,11 @@ function Navbar() {
                 <span className="home-links"> Register</span>
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/logout">
+                <span className="home-links"> Logout</span>
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
