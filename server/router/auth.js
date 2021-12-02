@@ -148,4 +148,12 @@ router.post('/contact', authenticate, async (req, res) => {
   }
 });
 
+
+router.get('/logout',(req, res) => {
+  console.log("User Logout");
+  res.clearCookie('jwtToken', {path :'/'});
+  res.status(200).send("user Logout Succesfully");
+
+});
+
 module.exports = router;
