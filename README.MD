@@ -1,2 +1,2 @@
 # Home Page 
-<img src="/Screenshots/Screenshot1.png">
+<img src="ScreenShots\Screenshot1.png">
