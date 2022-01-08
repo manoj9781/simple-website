@@ -37,7 +37,7 @@ function Contact() {
 
   useEffect(() => {
     aboutPage();
-  }, []);
+  },[]);
 
   const handleInputs = (e) => {
     const name = e.target.name;

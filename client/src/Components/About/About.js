@@ -34,7 +34,7 @@ function About() {
 
   useEffect(() => {
     aboutPage();
-  }, []);
+  },[]);
 
   return (
     <>
