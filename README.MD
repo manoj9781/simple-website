@@ -1,3 +1,2 @@
-
 # Home Page 
-<img src="/Screenshot/Screenshot1.png">
+<img src="/Screenshots/Screenshot1.png">
